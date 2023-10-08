@@ -9,10 +9,8 @@ def linear_search(list, target):
 
 def verify(index):
     if index is not None:
-        print('Target is found at index: ', index)
+        print('Target is found at position: ', index + 1)
     else:
         print("Target not found")
 
-
-
-
+verify(linear_search(range(1, 11), 2))
