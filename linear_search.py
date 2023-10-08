@@ -13,5 +13,6 @@ def verify(index):
     else:
         print("Target not found")
 
-verify(linear_search(range(1, 11), 2))
-verify(linear_search(range(1, 11), 12))
+if __name__ == '__main__':
+    verify(linear_search(range(1, 11), 2))
+    verify(linear_search(range(1, 11), 12))
