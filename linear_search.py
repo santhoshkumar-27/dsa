@@ -14,3 +14,4 @@ def verify(index):
         print("Target not found")
 
 verify(linear_search(range(1, 11), 2))
+verify(linear_search(range(1, 11), 12))
