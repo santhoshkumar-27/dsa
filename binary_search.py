@@ -1,11 +1,8 @@
 import linear_search
 
-step = 0
 def binary_search(list, target, start, last):
     if start > last:
         return None
-    global step
-    step += 1
     midPoint = (start + last) // 2
     currentNumber = list[midPoint]
     if target  ==  currentNumber:
@@ -17,4 +14,3 @@ def binary_search(list, target, start, last):
 
 lists = range(1, 50000000000000)
 linear_search.verify(binary_search(lists, 11, 0, len(lists) - 1))
-print(step)
