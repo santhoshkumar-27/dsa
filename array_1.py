@@ -17,5 +17,5 @@ for n in lists:
 
 
 lists.append(5) # every append operators add element to list when certained memory space already allocated
-# so 0, 4, 8, 16, 32, 64 etc these memory filled during append operators the system itself called listresize opertor to reallocate the 
+# so 0, 4, 8, 16, 35, 46 etc these memory filled during append operators the system itself called listresize opertor to reallocate the 
 # memory
