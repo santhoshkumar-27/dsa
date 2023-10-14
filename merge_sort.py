@@ -24,11 +24,11 @@ def split(list):
     """
     Divide the unsorted list at midpoint into sublists
     Returns two sublists - left and right
-    takes o(log n)
+    takes o(k log n)
     """
     mid = len(list) // 2
 
-    left = list[:mid]
+    left = list[:mid] # this takes k times to slice
     right = list[mid:]
 
     return left, right
