@@ -55,8 +55,33 @@ class LinkedList:
             if current.data == searchValue:
                 return True
             current = current.next_node
-
         return False
+    
+    def insertAtIndex(self, value, index):
+        """ 
+        Insert a item in the linked list at specified index
+        Takes o(n) times
+        """
+        length = self.sizeOfSingleList()
+        if index + 1 > length:
+            return "can't insert is out of index" 
+        if index == 0:
+            self.prepend_item_to_list(value)
+            return 'Added'
+        count = 0
+        current = self.head
+        previousNode = None
+        node = Node(value)
+        while current:
+            if count == index:
+                previousNode.next_node = node
+                node.next_node = current
+                return
+            previousNode = current
+            current = current.next_node
+            count += 1
+
+
     def append_item_to_list(self, data):
         """ 
             Adding data to the list three types
@@ -120,5 +145,10 @@ l1.append_item_to_list(11)
 l1.append_item_to_list(12)
 l1.prepend_item_to_list(13)
 print(l1.sizeOfSingleList())
+# print(l1)
+# print(l1.find(13))
+print(l1.insertAtIndex(4, 1))
+print(l1.insertAtIndex(3, 1))
+print(l1.sizeOfSingleList())
+
 print(l1)
-print(l1.find(13))
