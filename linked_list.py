@@ -42,6 +42,21 @@ class LinkedList:
 
         return count
 
+    def find(self, searchValue):
+        """ 
+        Returns the number of nodes in the lists
+        Takes o(n) times
+        """
+        current = self.head
+        if current == None:
+            return False
+
+        while current:
+            if current.data == searchValue:
+                return True
+            current = current.next_node
+
+        return False
     def append_item_to_list(self, data):
         """ 
             Adding data to the list three types
@@ -106,3 +121,4 @@ l1.append_item_to_list(12)
 l1.prepend_item_to_list(13)
 print(l1.sizeOfSingleList())
 print(l1)
+print(l1.find(13))
