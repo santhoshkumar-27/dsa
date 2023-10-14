@@ -56,7 +56,7 @@ class LinkedList:
                 return True
             current = current.next_node
         return False
-    
+
     def insertAtIndex(self, value, index):
         """ 
         Insert a item in the linked list at specified index
@@ -65,7 +65,7 @@ class LinkedList:
         """
         length = self.sizeOfSingleList()
         if index + 1 > length:
-            return "can't insert is out of index" 
+            return "can't insert is out of index"
         if index == 0:
             self.prepend_item_to_list(value)
             return 'Added'
@@ -82,6 +82,28 @@ class LinkedList:
             current = current.next_node
             count += 1
 
+    def removeAtIndex(self, index):
+        """ 
+        Insert a item in the linked list at specified index
+        Takes o(1) times
+        and finding the node to point it takes takes O(n) times
+        """
+        length = self.sizeOfSingleList()
+        if index + 1 > length:
+            return "can't remove is out of index"
+        if index == 0:
+            self.head = self.head.next_node
+            return 'removed'
+        count = 0
+        current = self.head
+        previousNode = None
+        while current:
+            if count == index:
+                previousNode.next_node = current.next_node
+                return
+            previousNode = current
+            current = current.next_node
+            count += 1
 
     def append_item_to_list(self, data):
         """ 
@@ -129,11 +151,12 @@ class LinkedList:
                 nodes.append("[Tail] %s" % current.data)
             else:
                 nodes.append("[body] %s" % current.data)
-        
+
             current = current.next_node
 
         # return "<Node data: %s>" % nodes
         return ' -> '.join(nodes)
+
 
 l1 = LinkedList()
 l1.append_item_to_list(5)
@@ -152,4 +175,6 @@ print(l1.insertAtIndex(4, 1))
 print(l1.insertAtIndex(3, 1))
 print(l1.sizeOfSingleList())
 
+print(l1)
+print(l1.removeAtIndex(1))
 print(l1)
