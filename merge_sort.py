@@ -7,7 +7,7 @@ def merge_sort(lists):
     conquer: Rescursively sort sublists the created in previous step
     combine: Merge the sorted sublists sorted created in previous step
 
-    it run times of o(logn)
+    it run times of o(nlogn)
 
     """
     length = len(lists)
@@ -24,6 +24,7 @@ def split(list):
     """
     Divide the unsorted list at midpoint into sublists
     Returns two sublists - left and right
+    takes o(log n)
     """
     mid = len(list) // 2
 
@@ -36,6 +37,7 @@ def split(list):
 def merge(leftArray, rightArray):
     """
     Merge two lists (arrays) in order and return as single list
+    takes o(n)
     """
     leftIndex = 0
     rightIndex = 0
