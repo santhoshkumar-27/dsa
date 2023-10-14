@@ -53,5 +53,17 @@ def merge(leftArray, rightArray):
     return sortedArray
 
 
+inputed = [3, 2, 7, 8, 9, 1, 4, 6, 5]
 
-print(merge_sort([3, 2, 7, 8, 9, 1, 4, 6, 5]))
+outputed = merge_sort(inputed)
+
+def verifySorted(lists):
+    n = len(lists)
+
+    if n == 0 or n == 1:
+        return True
+    
+    return lists[0] < lists[1] and verifySorted(lists[1:])
+
+print(verifySorted(inputed))
+print(verifySorted(outputed))
