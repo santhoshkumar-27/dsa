@@ -84,7 +84,7 @@ class LinkedList:
 
     def removeAtIndex(self, index):
         """ 
-        Insert a item in the linked list at specified index
+        remove a item in the linked list at specified index
         Takes o(1) times
         and finding the node to point it takes takes O(n) times
         """
@@ -105,6 +105,27 @@ class LinkedList:
             current = current.next_node
             count += 1
 
+    def removeByValue(self, value):
+        """ 
+        remove a item in the linked list at specified value
+        Takes o(1) times for removing
+        and finding the node to point it takes takes O(n) times
+        """
+        current = self.head
+        previousNode = None
+        while current:
+            if current.data == value and current is self.head:
+                self.head = current.next_node
+                return True
+            if current.data == value and current.next_node == None:
+                previousNode.next_node = None
+                return True
+            if current.data == value:
+                previousNode.next_node = current.next_node
+                return True
+            previousNode = current
+            current = current.next_node
+        return False
     def append_item_to_list(self, data):
         """ 
             Adding data to the list three types
@@ -176,5 +197,11 @@ print(l1.insertAtIndex(3, 1))
 print(l1.sizeOfSingleList())
 
 print(l1)
-print(l1.removeAtIndex(1))
+print(l1.removeAtIndex(10))
+print(l1)
+print(l1.removeByValue(13))
+print(l1)
+print(l1.removeByValue(11))
+print(l1)
+print(l1.removeByValue(8))
 print(l1)
