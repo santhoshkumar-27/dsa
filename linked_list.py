@@ -60,7 +60,8 @@ class LinkedList:
     def insertAtIndex(self, value, index):
         """ 
         Insert a item in the linked list at specified index
-        Takes o(n) times
+        Takes o(1) times
+        and finding the node to point it takes takes O(n) times
         """
         length = self.sizeOfSingleList()
         if index + 1 > length:
