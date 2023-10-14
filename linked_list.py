@@ -44,7 +44,7 @@ class LinkedList:
 
     def find(self, searchValue):
         """ 
-        Returns the number of nodes in the lists
+        Returns the True or False for value searching
         Takes o(n) times
         """
         current = self.head
