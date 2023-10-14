@@ -6,6 +6,9 @@ def merge_sort(lists):
     Divide: Find the midpoint of the list and divide into sublists
     conquer: Rescursively sort sublists the created in previous step
     combine: Merge the sorted sublists sorted created in previous step
+
+    it run times of o(logn)
+
     """
     length = len(lists)
     if length <= 1:
@@ -57,13 +60,15 @@ inputed = [3, 2, 7, 8, 9, 1, 4, 6, 5]
 
 outputed = merge_sort(inputed)
 
+
 def verifySorted(lists):
     n = len(lists)
 
     if n == 0 or n == 1:
         return True
-    
+
     return lists[0] < lists[1] and verifySorted(lists[1:])
+
 
 print(verifySorted(inputed))
 print(verifySorted(outputed))
