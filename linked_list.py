@@ -126,6 +126,7 @@ class LinkedList:
             previousNode = current
             current = current.next_node
         return False
+
     def append_item_to_list(self, data):
         """ 
             Adding data to the list three types
@@ -171,39 +172,59 @@ class LinkedList:
             elif current.next_node == None:
                 nodes.append("[Tail] %s" % current.data)
             else:
-                nodes.append("[body] %s" % current.data)
+                nodes.append("[node] %s" % current.data)
 
             current = current.next_node
 
         # return "<Node data: %s>" % nodes
         return ' -> '.join(nodes)
 
+    def returnAtIndex(self, index):
+        """ 
+        return a item in the linked list at specified index
+        Takes o(1) times
+        and finding the node to point it takes takes O(n) times
+        """
+        length = self.sizeOfSingleList()
+        if index + 1 > length:
+            return "can't return is out of index"
+        if index == 0:
+            return self.head
+        count = 0
+        current = self.head
+        while current:
+            if count == index:
+                return current
+            current = current.next_node
+            count += 1
 
-l1 = LinkedList()
-l1.append_item_to_list(5)
-l1.append_item_to_list(6)
-l1.append_item_to_list(7)
-l1.append_item_to_list(8)
-l1.append_item_to_list(9)
-l1.append_item_to_list(10)
-l1.append_item_to_list(11)
-l1.append_item_to_list(12)
-l1.prepend_item_to_list(13)
-print(l1.sizeOfSingleList())
-# print(l1)
-# print(l1.find(13))
-print(l1.insertAtIndex(4, 1))
-print(l1.insertAtIndex(3, 1))
-print(l1.sizeOfSingleList())
 
-print(l1)
-print(l1.removeAtIndex(10))
-print(l1)
-print(l1.removeByValue(13))
-print(l1)
-print(l1.removeByValue(11))
-print(l1)
-print(l1.removeByValue(8))
-print(l1)
-print(l1.removeByValue(1))
-print(l1)
+if __name__ == '__main__':
+    l1 = LinkedList()
+    l1.append_item_to_list(5)
+    l1.append_item_to_list(6)
+    l1.append_item_to_list(7)
+    l1.append_item_to_list(8)
+    l1.append_item_to_list(9)
+    l1.append_item_to_list(10)
+    l1.append_item_to_list(11)
+    l1.append_item_to_list(12)
+    l1.prepend_item_to_list(13)
+    print(l1.sizeOfSingleList())
+    # print(l1)
+    # print(l1.find(13))
+    print(l1.insertAtIndex(4, 1))
+    print(l1.insertAtIndex(3, 1))
+    print(l1.sizeOfSingleList())
+
+    print(l1)
+    print(l1.removeAtIndex(10))
+    print(l1)
+    print(l1.removeByValue(13))
+    print(l1)
+    print(l1.removeByValue(11))
+    print(l1)
+    print(l1.removeByValue(8))
+    print(l1)
+    print(l1.removeByValue(1))
+    print(l1)
