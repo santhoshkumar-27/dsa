@@ -9,6 +9,13 @@ def merge_sort(lists):
 
     it run times of o(nlogn)
 
+    and it takes linear space complexity
+
+    it alwas start operation from the left to right
+    3, 2, 7, 8, 9, 1, 4, 6, 5
+    3, 2, 7, 8   9, 1, 4, 6, 5
+    3, 2,  7, 8
+    3 2 7 8 -> this fiow first completed and then move back to the second sub lists
     """
     length = len(lists)
     if length <= 1:
