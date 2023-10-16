@@ -1,3 +1,5 @@
+# https://teamtreehouse.com/library/algorithms-sorting-and-searching/code-for-quicksort
+
 # Again, you can ignore these lines at the top. We're just using them
 # to load a file full of numbers into a list.
 import sys

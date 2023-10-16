@@ -57,9 +57,7 @@ def merge(leftArray, rightArray):
             sortedArray.append(rightArray[rightIndex])
             rightIndex += 1
 
-    if leftIndex < len(leftArray):
         sortedArray.extend(leftArray[leftIndex:])
-    elif rightIndex < len(rightArray):
         sortedArray.extend(rightArray[rightIndex:])
 
     return sortedArray
