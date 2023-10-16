@@ -7,12 +7,12 @@ l1.append_item_to_list(7)
 l1.prepend_item_to_list(4)
 l1.prepend_item_to_list(8)
 
-print(l1)
 
 # three functions
 # main function
 # split function
 # sort function
+
 
 def merge_sort(linked_list):
     """ 
@@ -73,7 +73,7 @@ def merge(left_half, right_half):
     # set current to the head of the linked list
     current = merged.head
 
-    #Obtain head nodes for left and right linked lists
+    # Obtain head nodes for left and right linked lists
     left_head = left_half.head
     right_head = right_half.head
 
@@ -110,7 +110,7 @@ def merge(left_half, right_half):
 
         # move current  to next node
         current = current.next_node
-    
+
     # Discard fake head and set first merged node as head
     head = merged.head.next_node
     merged.head = head
@@ -118,5 +118,23 @@ def merge(left_half, right_half):
     return merged
 
 
+# print(merge_sort(l1))
 
-print(merge_sort(l1))
+
+def verifySorted(linked_list):
+    n = linked_list.sizeOfSingleList()
+
+    if n == 0 or n == 1 or linked_list.head is None or linked_list is None:
+        return True
+    current = linked_list.head
+
+    # create a new linked list
+    newList = LinkedList()
+    # replace new data sets
+    newList.head = current.next_node
+    return current.data < current.next_node.data and verifySorted(newList)
+
+print(l1)
+print(verifySorted(l1))
+# print(merge_sort(l1))
+# print(verifySorted(merge_sort(l1)))
