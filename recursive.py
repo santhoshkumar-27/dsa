@@ -1,7 +1,9 @@
 def sum(numbers):
 
-    if len(numbers) <= 1:
-        return numbers[0] or 0
+    if len(numbers) == 1:
+        return numbers[0]
+    elif len(numbers) == 0:
+        return 0
     # total = 0
     # for num in numbers:
     #     total += num
@@ -11,4 +13,6 @@ def sum(numbers):
 
 
 
+print(sum([]))
+print(sum([1]))
 print(sum([1, 2, 3, 4, 5]))
