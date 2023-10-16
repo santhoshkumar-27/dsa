@@ -1,3 +1,5 @@
+# https://teamtreehouse.com/library/algorithms-sorting-and-searching/code-for-selection-sort
+
 # This code here at the top is the same as we saw in the Bogosort
 # example. It just loads a Python list of numbers from a file.
 import sys

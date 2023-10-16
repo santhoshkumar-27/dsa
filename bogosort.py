@@ -1,3 +1,5 @@
+# https://teamtreehouse.com/library/algorithms-sorting-and-searching/code-for-bogosort
+
 # The function that randomizes the order of the list is kept in the
 # "random" module, so we need to import that here.
 import random
