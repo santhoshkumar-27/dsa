@@ -1,8 +1,6 @@
 def sum(numbers):
-
-    if len(numbers) == 1:
-        return numbers[0]
-    elif len(numbers) == 0:
+    print(not numbers)
+    if not numbers: # if numbersis not present or empty list we should return it
         return 0
     # total = 0
     # for num in numbers:
