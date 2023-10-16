@@ -122,6 +122,9 @@ def merge(left_half, right_half):
 
 
 def verifySorted(linked_list):
+    """ 
+    Checks the givens lists is sorted or not
+    """
     n = linked_list.sizeOfSingleList()
 
     if n == 0 or n == 1 or linked_list.head is None or linked_list is None:
